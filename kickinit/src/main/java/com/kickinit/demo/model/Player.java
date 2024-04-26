@@ -13,11 +13,12 @@ public class Player {
     @Id
     private String id;
 
-//    private String email;
+    //    private String email;
     private String firstName;
     private String lastName;
     private int age;
     private List<String> preferredPositions;
+
 
     // Constructors, getters, setters, etc.
 }
