@@ -34,11 +34,11 @@ public class TeamController {
         return ResponseEntity.status(HttpStatus.CREATED).body(savedTeam);
     }
 
-//    @PutMapping("/{id}")
-//    public ResponseEntity<Team> updateTeam(@PathVariable String id, @RequestBody Team team) {
-//        Team updatedTeam = teamService.updateTeam(id, team);
-//        return updatedTeam != null ? ResponseEntity.ok(updatedTeam) : ResponseEntity.notFound().build();
-//    }
+    @PutMapping("/{id}")
+    public ResponseEntity<Team> updateTeam(@PathVariable String id, @RequestBody Team team) {
+        Team updatedTeam = teamService.updateTeam(id, team);
+        return updatedTeam != null ? ResponseEntity.ok(updatedTeam) : ResponseEntity.notFound().build();
+    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteTeam(@PathVariable String id) {

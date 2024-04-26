@@ -22,6 +22,16 @@ public class TeamService {
         Optional<Team> optionalTeam = teamRepository.findById(id);
         return optionalTeam.orElse(null);
     }
+    public Team updateTeam(String id, Team team) {
+        Optional<Team> optionalTeam = teamRepository.findById(id);
+        if (optionalTeam.isPresent()) {
+            Team existingTeam = optionalTeam.get();
+            existingTeam.setName(team.getName());
+            existingTeam.setPlayerIds(team.getPlayerIds());
+            return teamRepository.save(existingTeam);
+        }
+        return null;
+    }
 
     public Team saveTeam(Team team) {
         return teamRepository.save(team);
