@@ -16,5 +16,9 @@ public class PlayerService {
         return playerRepository.findAll();
     }
 
+    public Player createPlayer(Player player) {
+        return playerRepository.save(player);
+    }
+
     // Add more methods as needed for player-related operations
 }
