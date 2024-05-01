@@ -16,7 +16,7 @@ public class TeamController {
     @Autowired
     private TeamService teamService;
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Team>> getAllTeams() {
         List<Team> teams = teamService.getAllTeams();
         return new ResponseEntity<>(teams, HttpStatus.OK);
@@ -28,7 +28,7 @@ public class TeamController {
         return team != null ? ResponseEntity.ok(team) : ResponseEntity.notFound().build();
     }
 
-    @PostMapping
+    @PostMapping("/save")
     public ResponseEntity<Team> createTeam(@RequestBody Team team) {
         Team savedTeam = teamService.saveTeam(team);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedTeam);
@@ -40,7 +40,7 @@ public class TeamController {
         return updatedTeam != null ? ResponseEntity.ok(updatedTeam) : ResponseEntity.notFound().build();
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteTeam(@PathVariable String id) {
         teamService.deleteTeam(id);
         return ResponseEntity.noContent().build();

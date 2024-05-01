@@ -18,5 +18,5 @@ public class Team {
     private String name;
     private List<String> playerIds;
 
-    // Constructors, getters, setters, etc.
+
 }

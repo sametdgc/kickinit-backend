@@ -34,6 +34,5 @@ public class MatchService {
         matchRepository.deleteById(id);
     }
 
-    // Other methods for specific queries, if needed
-    // ...
+
 }

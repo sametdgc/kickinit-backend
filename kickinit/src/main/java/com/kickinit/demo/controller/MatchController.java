@@ -17,7 +17,7 @@ public class MatchController {
     @Autowired
     private MatchService matchService;
 
-    @PostMapping
+    @PostMapping("/save")
     public ResponseEntity<Match> createMatch(@RequestBody Match match) {
         Match savedMatch = matchService.saveMatch(match);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedMatch);
@@ -30,7 +30,7 @@ public class MatchController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Match>> getAllMatches() {
         List<Match> matches = matchService.getAllMatches();
         return ResponseEntity.ok(matches);
@@ -43,7 +43,7 @@ public class MatchController {
         return ResponseEntity.ok(updatedMatch);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteMatch(@PathVariable String id) {
         matchService.deleteMatchById(id);
         return ResponseEntity.noContent().build();

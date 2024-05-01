@@ -22,5 +22,5 @@ public class Player {
     private List<String> preferredPositions;
 
 
-    // Constructors, getters, setters, etc.
+
 }

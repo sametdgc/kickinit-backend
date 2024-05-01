@@ -21,5 +21,5 @@ public class Match {
     private int homeTeamScore;
     private int awayTeamScore;
 
-    // Constructors, getters, setters, etc.
+
 }
